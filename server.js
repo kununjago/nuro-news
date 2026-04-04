@@ -159,4 +159,10 @@ app.get('/api/market', async (req, res) => {
     }
 });
 
-app.listen(process.env.PORT || 3000, () => console.log(`Server aktif!`));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server Nuro News aktif di port ${PORT}`);
+});
+
+// Tambahkan ini di paling bawah file server.js (PENTING untuk Vercel)
+module.exports = app;
